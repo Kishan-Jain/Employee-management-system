@@ -1,13 +1,31 @@
 {% extends "base.html" %}
 
-
 {% block basefile %}
 
-<h1> hello</h1>
-
-
-
-
-
+<h1 class="d-flex justify-content-center text-success bg-dark pt-5 pb-5 fw-bold" >Employee Management System Server </h1>
+<main class="form-signin text-center d-flex justify-content-center">
+    <form method='post' autocomplete="off" class="w-25 " novalidate >
+        {% csrf_token %}
+      <h1 class="h3 fw-semibold mb-3 mt-3 ">Please sign in</h1>
+  
+      <div class="form-floating mb-3  ">
+        {{authlogin.username}}
+        <label for="floatingInput">Enter UserId</label>
+      </div>
+      <div class="form-floating mb-3 ">
+        {{authlogin.password}}
+        <label for="floatingPassword">Enter Password</label>
+      </div>
+  
+      <div class="checkbox mb-3 mx-2 text-start">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <input class="w-100 btn btn-lg btn-primary" type="submit" value="login">
+      
+      <h5 class=" my-3 ">If, Not register, <a href="{% url 'register' %}" class="text-decoration-none" >register here</a> </h5>
+    </form>
+  </main>
 
 {% endblock basefile %}

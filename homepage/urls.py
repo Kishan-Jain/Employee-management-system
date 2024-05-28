@@ -1,7 +1,15 @@
+
 from django.urls import path, include
-from . import views
+from homepage.views import homepage, register, logoutpage
+from employee.views import employee
 
 urlpatterns = [
-    path('', views.homepage, name="home"),
-    path('/', include('employee.urls')),
+
+    path('employee/', include('employee.urls')),
+    path('', homepage, name='homepage'),
+    path('register/', register, name='register'),
+    path('employee/', employee, name='employee'),
+    path('logout/', logoutpage, name='logout'),
+    
+
 ]
