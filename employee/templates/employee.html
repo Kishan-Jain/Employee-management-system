@@ -2,8 +2,41 @@
 
 {% block basefile %}
 
-<button  type="button"><a href="{% url 'logout' %}">logout</a></button>
+<h1 class="d-flex justify-content-center text-success bg-dark pt-5 pb-5 fw-bold" >Employee Management System Server </h1>
+
+<table class='w-auto m-auto table table-bordered table-striped'>
+    <tr>
+        <th>Id</th>
+        <th >Unique Id</th>
+        <th>Full Name</th>
+        <th>Mail_Id</th>
+        <th>Dipartment</th>
+        <th>Field</th>
+        <th>Branch</th>
+        <th>Views Details</th>
+    </tr>
+    {% for dt in empData  %}
+    <tr>
+        <th>{{dt.id}}</th>
+        <th >{{dt.unique_id}}</th>
+        <th>{{dt.full_name}}</th>
+        <th>{{dt.mail_id}}</th>
+        <th>{{dt.dipartment}}</th>
+        <th>{{dt.field}}</th>
+        <th>{{dt.branch}}</th>
+        <th>Views details</th>
+        
+    </tr>
+    {% endfor %}
 
 
+
+</table>
+
+
+<button  type="button"><a href="{% url 'logout' %}">logout</a></button><br><br>
+
+
+<button  type="button"><a href="{% url 'addEmployee' %}">Add Employee</a></button>
 
 {% endblock basefile %}

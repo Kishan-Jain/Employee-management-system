@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
     'employee',
     'homepage',
     
@@ -126,3 +127,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# For filefield models use media directory (for dynamic file)
+
+MEDIA_ROOTS = BASE_DIR / "media"
+
+MEDIA_URL = "/media/"

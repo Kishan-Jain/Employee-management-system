@@ -28,7 +28,7 @@ def homepage(request):
 def register(request):
     if request.method == 'POST':
         registerformdata = RegisterForm(request.POST)
-        print('post')
+        
         if registerformdata.is_valid():
             registerformdata.save()
             messages.success(request, 'User register successfully')
