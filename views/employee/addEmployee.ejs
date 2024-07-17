@@ -1,0 +1,67 @@
+<%- include ('../base_files/header.ejs')  %>
+
+<h3 class="d-flex justify-content-center text-success bg-dark pt-2 pb-2 fw-bold">Employee Management System Server </h3>
+
+<% if (error) { %> 
+	
+	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		<strong class="mx-1">Error : </strong> <%= error %>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+	<% } %>
+
+<div class="w-75 m-auto">
+	<h4 class=" px-3 pt-2 pb-3 my-3 fw-bold ">Adding New Employee Data in DataBase</h1>
+	<form class="needs-validation" method="post" action="/employee/addemployee" >
+		<p class="m-2">*** All fields are compulsory </p>
+		<div class="row">
+
+			<div class="col-6">
+				<label for="empId" class="form-label my-2">EmployeeId</label>
+					<input type="text" class="form-control p-2 " id="empId" placeholder="EmployeeId" required="" name="empId">
+			</div>
+			<div class="col-6">
+				<label for="empMail" class="form-label my-2">Employee MailId</label>
+					<input type="text" class="form-control p-2 " id="empMail" placeholder="Employee MailId" required="" name="empMail">
+			</div>
+			<div class="col-6">
+				<label for="Name" class="form-label my-2">Name</label>
+				<input type="text" class="form-control p-2" id="Name" placeholder="Enter Name" required="" name="name">
+			</div>
+
+	
+
+			<div class="col-6">
+				<label for="email" class="form-label my-2">Email </label>
+				<input type="email" class="form-control p-2" id="email" placeholder="Enter Email Address" required="" name="email">
+			</div>
+
+			<div class="col-6">
+				<label for="department" class="form-label my-2">Dipartment</label>
+				<input type="text" class="form-control p-2" id="department" placeholder="Enter Department Name" required="" name="dipartment">
+			</div>
+
+			<div class="col-6">
+				<label for="field" class="form-label my-2">Field</label>
+				<input type="text" class="form-control p-2" id="field" placeholder="Enter Field Name" required="" name="field">
+			</div>
+
+			<div class="col-6">
+				<label for="HOD" class="form-label my-2">Haed of Dipartment</label>
+				<input type="text" class="form-control p-2" id="HOD" placeholder="Enter HOD name" required="" name="HOD">
+			</div>
+
+			
+			<div class="col-md-6">
+				<label for="branch" class="form-label my-2">Branch</label>
+				<input type="text" class="form-control p-2" id="branch" placeholder="Enter Branch name" required="" name="branch">
+			</div>
+		</div>
+
+
+		<button class="btn btn-success my-3" type="submit">Save Data</button>
+	</form>
+
+</div>
+<%- include ("../base_files/footer.ejs") %>

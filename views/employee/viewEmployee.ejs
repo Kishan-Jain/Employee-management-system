@@ -1,0 +1,58 @@
+<%- include ('../base_files/header.ejs')  %>
+
+<h1 class="d-flex justify-content-center text-success  bg-dark pt-5 pb-5 fw-bold" >Employee Management System Server </h1>
+<div class="row">
+    <div class="col-sm-10">
+        <table class='w-auto m-auto p-10 table table-bordered table-striped'>
+
+            <tr>
+                <th>Id</th>
+                <th >EmployeeId</th>
+                <th >Employee mail</th>
+                <th>Full Name</th>
+                <th>EMail_Id</th>
+                <th>Dipartment</th>
+                <th>HOD</th>
+                <th>Field</th>
+                <th>Branch</th>
+                <th>Actions</th>
+            </tr>
+            <% var i=1 %>
+            <% data.forEach((item) => { %> 
+                <tr>
+                    <th ><%= i++ %> </th>
+                    <td> <%= item.empId.toUpperCase() %> </td>
+                    <td> <%= item.empMail.toUpperCase() %> </td>
+                    <td> <%= item.name %> </td>
+                    <td> <%= item.email %> </td>
+                    <td> <%= item.dipartment %> </td>
+                    <td> <%= item.HOD %> </td>
+                    <td> <%= item.field %> </td>
+                    <td> <%= item.branch %> </td>
+                    <td><form action="/employee/editemployee/<%= item._id %>" method="post" class="d-inline">
+                        <button class="btn" type="submit">
+                            <i class="fa-solid fa-pen-to-square text-success"></i>
+                        </button></form>
+                        <form action="/employee/removeemployee/<%= item._id %>" method="post" class="d-inline">
+                        <button class="btn" type="submit">
+                                <i class="fa-solid fa-trash-can text-danger"></i>
+                        </button></form>
+                    </td>
+                </tr>
+                    
+            <% }) %>
+
+        </table>
+    </div>
+    <div class="col-sm-2">
+    <button class="btn btn-warning" type="button"><a href="/" class="text-decoration-none text-dark">
+        logout</a>
+    </button>
+    <br><br>
+
+    <button class="btn btn-danger" type="button">
+        <a href="/employee/addemployee" class="text-decoration-none text-dark">Add Employee</a>
+    </button>
+    </div>
+</div>
+<%- include ("../base_files/footer.ejs") %>

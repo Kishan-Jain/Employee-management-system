@@ -1,0 +1,18 @@
+<%- include ('../base_files/header.ejs') %>
+
+<h1 class="d-flex justify-content-center text-success bg-dark py-3 fw-bold" >Employee Management System Server </h1>
+
+
+<% if (massage){ %> 
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+	  <strong>Register alert</strong> <%= massage %>
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+<% } %>
+
+
+
+
+
+<%- include ('../base_files/footer.ejs') %>
+

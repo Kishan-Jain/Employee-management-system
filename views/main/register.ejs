@@ -1,0 +1,77 @@
+
+<%- include ('../base_files/header.ejs') %>
+
+<%# Body started here %>
+
+<% if (massage){ %> 
+	<div class="alert alert-danger alert-dismissible " role="alert">
+	  <strong>Register alert</strong> <%= massage %>
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+<% } %>
+<main class="form-signin bg-light vh-100 text-start  d-flex justify-content-center ">
+	<form action="/register" method='post' autocomplete="off" class="w-50 m-auto" novalidate>
+		<h1 class="h3 fw-semibold mb-3 mt-3 ">Register To Server</h1>
+		<div class="row g-3">
+			<div class="col-sm-6 mb-3">
+				<label for="fullName" class="form-label">Full name</label>
+				<input type="text" class="form-control" id="fullName" placeholder="Enter name" name="fullname" required />
+			</div>
+			<div class="col-sm-6 mb-3">
+				<label for="email" class="form-label">Email Address</label>
+				<input type="email" class="form-control" id="emailAddress" placeholder="Enter Email Address" name="email" required />
+				
+
+			</div>
+			
+		</div>
+
+		<div class="row g-3">
+			<div class="col-sm-6 mb-3">
+				<label for="username" class="form-label">Username</label>
+				<input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required />
+				
+			</div>
+			<div class="col-sm-6 mb-3">
+				<label for="empId" class="form-label">Eployee Id</label>
+				<input type="text" class="form-control" id="empId" placeholder="Enter empId" name="username" required />
+				
+			</div>
+			
+		</div>
+		<div class="row g-3">
+			<div class="col-sm-6 mb-3">
+				<label for="dipartment" class="form-label">Dipartment</label>
+				<input type="text" class="form-control" id="dipartment" placeholder="Enter Dipartment" name="dipartment" required />
+				
+			</div>
+			<div class="col-sm-6 mb-3">
+				<label for="position" class="form-label">Position</label>
+				<input type="text" class="form-control" id="position" placeholder="Enter Position" name="position" required />
+				
+			</div>
+			
+		</div>
+		<div class="row g-3">
+			<div class="col-sm-6 mb-3">
+				<label for="password1" class="form-label">Password</label>
+				<input type="password" class="form-control" id="password1" placeholder="Enter password" name="password" required />
+
+			</div>
+
+			<div class="col-sm-6 mb-3">
+				<label for="password2" class="form-label">Password(again)</label>
+				<input type="text" class="form-control" id="password2" placeholder="Re-Enter password" required />
+
+			</div>
+		</div>
+
+		<input class="w-100 btn btn-lg btn-primary" type="submit" value="Register">
+
+		<h5 class=" my-3 ">If, already register, <a href="/" class="text-decoration-none">login</a>
+		</h5>
+	</form>
+</main>
+
+
+<%- include ('../base_files/footer.ejs') %>
